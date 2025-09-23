@@ -1,0 +1,143 @@
+/* src/styles/Home.css */
+
+/* 웹폰트 적용 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* 전역 폰트 지정 */
+html, body {
+  font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont,
+               system-ui, Roboto, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+               "Malgun Gothic", sans-serif;
+}
+
+/* 전체 래퍼 */
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* 가운데 1280 컨테이너 */
+.home-component {
+  width: 1280px;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 40px 0 80px; /* 상단/하단 여백 */
+}
+
+/* 상단 타이틀 & CTA */
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin: 0 0 40px;
+  color: black;
+}
+
+/* CTA 버튼 */
+.service-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: #d9f0df;
+  border: 1px solid #cfe9d6;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.service-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0,0,0,.06);
+}
+
+.service-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.service-button .bigTitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: black;
+}
+
+.service-button img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* 이용 방법 섹션 */
+.how-to-use {
+  margin-top: 100px;
+}
+
+.how-to-use > h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 36px;
+  color: black;
+}
+
+/* 5개 카드 가로 정렬 컨테이너 */
+.use-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: start;           /* 상단 정렬 */
+  column-gap: 32px;          /* 카드-구분자 간 간격 */
+  row-gap: 0;
+  position: relative;
+}
+
+/* 각 카드 */
+.use {
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* 공통 아이콘 이미지 */
+.use-img {
+  width: 112px;              /* 필요 시 조정 */
+  height: auto;
+  display: inline-block;
+  margin: 0 auto 16px;
+}
+
+/* 구분자 이미지(… 아이콘) */
+.horizontal-img {
+  width: 28px;               /* 구분자 svg 가로 크기 */
+  height: auto;
+  align-self: center;           /* 카드 아이콘 하단선과 맞추기 */
+  margin: 0 4px 36px;        /* 아래 여백으로 세밀 위치 조정 */
+  opacity: 0.85;
+  pointer-events: none;      /* 클릭 막기(장식) */
+  user-select: none;
+}
+
+/* 제목/본문 */
+.use .title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 6px 0 8px;
+  color: black;
+}
+
+/* \r\n 줄바꿈 살리기 */
+.use .content {
+  font-size: 14px;
+  color: #585A5A;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}

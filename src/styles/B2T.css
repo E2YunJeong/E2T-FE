@@ -1,0 +1,188 @@
+/* 페이지 전체: 가운데 1280 컨테이너 */
+.b2t {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.b2t-container {
+  width: 1280px;
+  box-sizing: border-box;
+  padding: 24px 0 56px;
+}
+
+/* 상단 2열 레이아웃 */
+.b2t-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px; /* 좌측 유동, 우측 고정 */
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ===== 왼쪽: 웹캠 박스 ===== */
+.video-pane {
+  position: relative;
+  min-height: 420px;                 /* 박스 높이 */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  /* 박스처럼 보이도록 내부 중앙 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== 오른쪽: 채팅 박스 ===== */
+.chat-pane {
+  background: #f9efe7;               /* 은은한 살구색 */
+  border: 1px solid #d8d0c9;
+  border-radius: 8px;
+  padding: 14px 12px;
+  min-height: 420px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-scroll {
+  overflow-y: auto;
+  padding-right: 6px;                /* 스크롤 여백 */
+}
+
+/* 말풍선 */
+.msg {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.msg.left { justify-content: flex-start; }
+
+.bubble {
+  max-width: 78%;
+  background: #dfe9f7;               /* 연파랑 말풍선 */
+  color: #222;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border-top-right-radius: 6px;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.time {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+/* ===== 하단: 자음 모스부호 표 ===== */
+.morse-board { margin-top: 28px; }
+
+.sheet-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.sheet {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.sheet-img {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.sheet3 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.sheet3 img {
+  width: 55%;
+  height: auto;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+}
+
+/* --- 웹캠 박스 --- */
+.video-pane {
+  position: relative;
+  min-height: 450px;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 비디오를 박스 안에 맞춤 (셀피 UX를 위해 좌우 반전) */
+.preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* 필요 시 cover */
+  transform: scaleX(-1); /* 셀피 미러링 */
+  background: #fff;
+  display: block;
+}
+
+/* 에러 오버레이 */
+.video-error {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 16px;
+}
+
+.video-error .hint {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 하단 오른쪽 컨트롤 버튼 */
+.video-controls {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.video-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cfe9d6;
+  background: #e7f4eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+.video-btn:hover { background: #dbefe2; }
