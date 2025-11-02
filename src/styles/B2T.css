@@ -186,3 +186,46 @@
   font-weight: 600;
 }
 .video-btn:hover { background: #dbefe2; }
+
+/* 비디오 컨테이너를 오버레이 기준점으로 */
+.video-pane { position: relative; }
+.video-wrap { position: relative; display: inline-block; }
+.preview-video { width: 640px; height: 480px; background: #000; }
+
+/* 🔹 웹캠 오버레이 */
+.video-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  max-width: calc(100% - 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+}
+.overlay-line {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.3;
+  animation: fadehold 4.5s linear forwards; /* 표시 후 서서히 사라짐 */
+}
+@keyframes fadehold {
+  0%   { opacity: 0 }
+  8%   { opacity: 1 }
+  80%  { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+/* 상태/디코드 박스 */
+.ws-status { margin-top: 4px; font-size: 12px; color: #7aa2ff; }
+
+/* 채팅 스크롤 */
+.chat-scroll {
+  max-height: 480px;
+  overflow: auto;
+  padding-right: 6px;
+}
